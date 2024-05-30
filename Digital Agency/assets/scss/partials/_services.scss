@@ -1,0 +1,40 @@
+.services {
+    background: url('../../assets/img/services_bg.jpg') no-repeat center/cover;
+
+    &-wrapper {
+        @include flex(flex-start, center, row wrap, 2rem);
+
+        .services-item {
+            flex: 1 0 350px;
+
+            @include breakpoints(400px) {
+                flex: 1 0 200px;
+            }
+
+            &:hover>i {
+                color: white;
+                background-color: $primaryColor
+            }
+
+            i {
+                @include iconBox(85px, 85px, 85px, 50%, 2rem, $white, $primaryColor);
+
+                @include breakpoints(576px) {
+                    width: 70px;
+                    height: 70px;
+                    line-height: 70px;
+                    font-size: 1.7rem;
+                }
+            }
+
+            h4 {
+                @include text(1.4rem, $secondaryColor, 1rem 0, 700, 1.2rem);
+            }
+
+            p {
+                max-width: 300px;
+                line-height: 1.5;
+            }
+        }
+    }
+}

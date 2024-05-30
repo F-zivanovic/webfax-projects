@@ -1,0 +1,78 @@
+.contact {
+    background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url('../../assets/img/footer_bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &-wrapper {
+        @include flex(center, center, row wrap, 1rem);
+        color: $white;
+
+        .contact-item {
+            flex: 1 1 350px;
+
+            @include breakpoints(450px) {
+                flex: 1 1 200px;
+            }
+
+            .section-title,
+            .section-subtitle {
+                color: $white;
+            }
+
+            .contact-desc {
+                max-width: 450px;
+                margin-bottom: 2rem;
+            }
+
+            .contact-social {
+
+                &:not(:last-child) {
+                    margin-bottom: 1.5rem;
+                }
+
+                i {
+                    width: 35px;
+                    height: 35px;
+                    line-height: 35px;
+                    text-align: center;
+                    border-radius: 50%;
+                    background-color: $white;
+                    color: $primaryColor;
+                    margin-right: .5rem;
+                }
+            }
+
+            .contact-form {
+
+                @include breakpoints(992px) {
+                    margin-top: 2rem;
+                }
+
+                .contact-input {
+                    background: transparent;
+                    padding: 1rem;
+                    border-radius: 20px;
+                    border: 1px solid $white;
+                    text-transform: capitalize;
+                    flex: 1;
+                    color: $white;
+                    margin-bottom: 1.5rem;
+                }
+
+                .contact-group {
+                    display: flex;
+                    gap: .5rem;
+
+                    @include breakpoints(450px) {
+                        flex-direction: column;
+                    }
+                }
+
+                textarea {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+.about {
+    @include flex(center, center, row nowrap, 2rem);
+
+    @include breakpoints(992px) {
+        flex-direction: column;
+    }
+
+    &-img {
+        flex: 1;
+        height: 40rem;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    &-content {
+        flex: 1;
+
+        .section-subtitle {
+            max-width: 500px;
+
+            span {
+                color: $primaryColor;
+            }
+
+            &+p {
+                max-width: 550px;
+                padding-bottom: 1rem;
+                border-bottom: 2px solid $secondaryColor;
+            }
+        }
+
+        .about-info {
+            margin-top: 1rem;
+            max-width: 550px;
+
+            .about-title {
+                @include flex(space-between);
+                cursor: pointer;
+
+                h2 {
+                    color: $secondaryColor;
+                }
+            }
+
+            .about-text {
+                height: 0;
+                overflow: hidden;
+
+                &.show {
+                    padding: 2rem 0;
+                }
+            }
+        }
+    }
+}

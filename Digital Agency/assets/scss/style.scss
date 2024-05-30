@@ -1,0 +1,25 @@
+/*------------------------------
+Google fonts link
+-----------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/*------------------------------
+External files
+-----------------------------*/
+@import 'variables';
+@import 'mixins.scss';
+
+
+/*------------------------------
+Partials
+-----------------------------*/
+@import 'partials/default';
+@import 'partials/nav';
+@import 'partials/banner';
+@import 'partials/about';
+@import 'partials/services';
+@import 'partials/stories';
+@import 'partials/portfolio';
+@import 'partials/contact';
+@import 'partials/footer';

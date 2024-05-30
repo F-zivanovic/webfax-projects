@@ -1,0 +1,65 @@
+.portfolio {
+
+    &-wrapper {
+        @include grid(300px);
+        gap: 2.5rem;
+
+        @include breakpoints(450px) {
+            @include grid(200px);
+        }
+
+        .portfolio-item {
+
+            &:hover>.portfolio-content {
+                background-color: $primaryColor;
+            }
+
+            &:hover>.portfolio-content>.portfolio-text>p {
+                color: $white;
+            }
+
+            &:hover>.portfolio-content>.portfolio-text>h3 {
+                color: $white;
+            }
+
+            &:hover>.portfolio-content>i {
+                background-color: $white;
+                color: $secondaryColor;
+            }
+
+            .portfolio-images {
+                height: 25rem;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            .portfolio-content {
+                padding: 1rem;
+                @include flex(space-between);
+
+                .portfolio-text {
+                    p {
+                        text-transform: capitalize;
+                        font-size: 1.1rem;
+                        color: $primaryColor;
+                    }
+
+                    h3 {
+                        color: $secondaryColor;
+                        font-size: 1.5rem;
+
+                        @include breakpoints(576px) {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+
+                i {
+                    @include iconBox(30px, 30px, 30px, 50%, 1.3rem, $secondaryColor, $white);
+                }
+            }
+        }
+    }
+}

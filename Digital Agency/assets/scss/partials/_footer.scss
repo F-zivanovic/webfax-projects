@@ -1,0 +1,43 @@
+.footer {
+    padding: 2rem 0;
+    background-color: $secondaryColor;
+    color: $white;
+    text-align: center;
+
+    &-wrapper {
+        @include flex(space-between, center, row wrap, 1rem);
+
+        @include breakpoints(576px) {
+            flex-direction: column;
+        }
+
+        .footer-text {
+            text-transform: capitalize;
+
+            span {
+                color: $primaryColor;
+                font-weight: 700;
+            }
+        }
+
+        .footer-social {
+
+            i {
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                text-align: center;
+                border-radius: 50%;
+                background-color: $primaryColor;
+                color: $white;
+                margin-right: .5rem;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $white;
+                    color: $primaryColor;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+nav {
+    background-color: $white;
+    padding: 1rem 0;
+
+    .nav-wrapper {
+        @include flex(space-between);
+
+        .logo {
+            @include text(2rem, $primaryColor, 0, 600, 1.7rem);
+
+            @include breakpoints(576px) {
+                font-size: 1.3rem;
+            }
+
+            span {
+                color: $secondaryColor;
+            }
+        }
+
+        #menu-btn {
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    }
+
+    .mobile-menu {
+        background-color: $secondaryColor;
+        @include position(fixed, 0, 0, 0);
+        width: 300px;
+        z-index: 10000;
+
+        &.hidden {
+            transform: translateX(100%);
+        }
+
+        @include breakpoints(768px) {
+            width: 40%;
+        }
+
+        @include breakpoints(400px) {
+            width: 60%;
+        }
+
+        #close {
+            @include position(absolute, 25px, 25px);
+            color: $white;
+            font-size: 2.5rem;
+            cursor: pointer;
+
+            @include breakpoints(576px) {
+                font-size: 1.8rem;
+            }
+        }
+
+        .box {
+            @include flex(flex-start);
+            height: 100%;
+
+            ul {
+                padding-left: 2rem;
+
+                a {
+                    display: block;
+                    color: $white;
+                    margin-bottom: 1.2rem;
+                    text-transform: capitalize;
+
+                    &:hover {
+                        color: $primaryColor;
+                    }
+                }
+            }
+        }
+    }
+
+}

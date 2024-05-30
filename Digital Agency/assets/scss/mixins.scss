@@ -1,0 +1,50 @@
+@mixin flex($justify, $align: center, $flow: row nowrap, $gap: 0) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-flow: $flow;
+    gap: $gap;
+}
+
+@mixin grid($value) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($value, 1fr));
+    gap: 2rem;
+}
+
+@mixin position($position, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin iconBox($width, $height, $lineHeight, $borderRadius, $fontSize, $bg, $color) {
+    width: $width;
+    height: $height;
+    line-height: $lineHeight;
+    border-radius: $borderRadius;
+    font-size: $fontSize;
+    background-color: $bg;
+    color: $color;
+    text-align: center;
+
+}
+
+@mixin text($textSize, $color, $margin: 0, $textWeight: 400, $textSize1: 1rem) {
+    font-size: $textSize;
+    color: $color;
+    margin: $margin;
+    font-weight: $textWeight;
+
+    @media(max-width:576px) {
+        font-size: $textSize1;
+    }
+}
+
+@mixin breakpoints($bp) {
+    @media(max-width:$bp) {
+        @content;
+    }
+}
